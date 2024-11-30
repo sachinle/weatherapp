@@ -1,0 +1,153 @@
+/* General body styles */
+body {
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #fff;
+    overflow: hidden; /* Ensures that animations don’t affect page layout */
+    transition: background 1s ease-in-out; /* Smooth background transition */
+}
+
+/* Main content container */
+.content {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 40px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .content {
+        width: 95%;
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+}
+
+/* Title styling */
+h1 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Input field styling */
+input {
+    width: 85%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Input hover and focus effect */
+input:focus, input:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Button styling */
+button {
+    width: 90%;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    background-color: #0072ff;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #005ecb;
+}
+
+/* Weather display section */
+#weather {
+    font-size: 1.2em;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    min-width: 250px;
+    color: #ffffff;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Weather Animations */
+.sunny {
+    background: linear-gradient(to right, #f9d423, #ff4e50);
+}
+
+.cloudy {
+    background: linear-gradient(to right, #bdc3c7, #2c3e50);
+}
+
+.rainy {
+    background: linear-gradient(to right, #4e54c8, #8f94fb);
+    animation: rainEffect 1s infinite linear;
+}
+
+@keyframes rainEffect {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100vh;
+    }
+}
+
+.snowy {
+    background: linear-gradient(to right, #83a4d4, #b6fbff);
+    animation: snowEffect 5s infinite linear;
+}
+
+@keyframes snowEffect {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100vh;
+    }
+}
+
+.thunderstorm {
+    background: linear-gradient(to right, #0f2027, #2c5364);
+    animation: thunderEffect 1.5s infinite;
+}
+
+@keyframes thunderEffect {
+    0%, 100% {
+        background-color: rgba(255, 255, 255, 0);
+    }
+    50% {
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+}
